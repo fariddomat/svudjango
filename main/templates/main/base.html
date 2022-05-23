@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AI Project</title>
+        <style>
+            body{
+                margin:25px;
+                padding:25px;
+                background: darkcyan;
+                color:white
+            }
+            h1{
+                margin: 0 auto;
+                text-align: center;
+                color: white;
+            }
+
+            h2{
+                color:white;
+            }
+
+            p{
+                color:white
+            }
+            .row{
+                width: 100%;
+                display: inline;
+                float: left;
+                margin-top:25px;
+            }
+            .col{
+                width: 50%;
+                display: inline;
+                float: left;
+            }
+            .country{
+                display: table-caption;
+            }
+            label{
+                margin:15px 0
+            }
+            textarea{
+                border-radius: 10px;
+                margin: 15px 0;
+                padding-left:15px
+            }
+            input{
+                border-radius: 10px;
+                margin: 10px 0 15px;
+                height: 30px;
+                width: 180px;
+                padding: 0 15px;
+            }
+            .country-btn{
+                padding: 12px;
+                border-radius: 10px;
+                background: gold;
+                color: crimson;
+                font-size: 15px;
+                font-weight: bold;
+            }
+            .city-btn{
+                padding: 12px;
+                border-radius: 10px;
+                background: #34ee34;
+                color: #2c448c;
+                font-size: 15px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+    {% block content %}
+    {% endblock content %}
+    </body>
+</html>

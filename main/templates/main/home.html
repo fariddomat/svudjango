@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>Project Home page</h1>
+    <h2>A* Algorithm</h2>
+    <p>
+        Project to calculate destance using A* Algorithm
+        <form method="POST" action="reset">
+            {% csrf_token %}
+            <input type="hidden" Values="reset" name="reset"/>
+            <button class="city-btn" type="submit">Reset Romania Map</button>
+        </form>
+    </p>
+    <div class="row">
+        <div class="col">
+            <div class="country"> 
+                <p>
+                {{data2|linebreaks}}
+                <p>
+                <form  method="POST" action="store">
+                    {% csrf_token %}
+                    {{store_form}}
+                    {% comment %} <label><b>Country Graph</b></label>
+                    <textarea rows="7" cols="50">
+                    </textarea>
+                    <label>Values of Heuristic i.e <b>Straight Line</b> distance to Bucharest</label>
+                    <textarea rows="7" cols="50">
+                    </textarea> {% endcomment %}
+                    
+                    <button class="country-btn" type="submit">Save Country</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="country">
+                <form method="POST" action="/">
+                    {% csrf_token %}
+                    {{search_form}}
+                    <!-- 
+                    <label>Source</label>
+                    
+                    <input type="text" name="source" placeholder="Source"/>
+                    <label>Destination</label>
+                    <input type="text" name="destination" placeholder="Destination"/>
+                    -->
+                    <button class="city-btn" type="submit">A* search</button>
+                </form>
+            </div>
+            
+            <p>
+                {{data|linebreaks}}
+            <p>
+        </div>
+    </div>
+
+{% endblock content %}
